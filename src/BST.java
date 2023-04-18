@@ -93,11 +93,13 @@ public class BST {
 
     public void getInorderHelper(BSTNode root, ArrayList<BSTNode> a)
     {
-        /*if (root == null)
+        if (root == null)
         {
             return;
-        }*/
-
+        }
+        getInorderHelper(root.getLeft(), a);
+        a.add(root);
+        getInorderHelper(root.getRight(), a);
     }
 
     /**
