@@ -100,6 +100,7 @@ public class BST {
         getInorderHelper(root.getLeft(), a);
         a.add(root);
         getInorderHelper(root.getRight(), a);
+        return;
     }
 
     /**
@@ -130,7 +131,22 @@ public class BST {
      */
     public ArrayList<BSTNode> getPostorder() {
         // TODO: Complete postorder traversal
-        return null;
+        BSTNode root = this.root;
+        ArrayList<BSTNode> a = new ArrayList<BSTNode>();
+        getPostorderHelper(root, a);
+        return a;
+    }
+
+    public void getPostorderHelper(BSTNode root, ArrayList<BSTNode> a)
+    {
+        if (root == null)
+        {
+            return;
+        }
+        getPostorderHelper(root.getLeft(), a);
+        getPostorderHelper(root.getRight(), a);
+        a.add(root);
+        return;
     }
 
     /**
