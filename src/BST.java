@@ -85,7 +85,19 @@ public class BST {
      */
     public ArrayList<BSTNode> getInorder() {
         // TODO: Complete inorder traversal
-        return null;
+        BSTNode root = this.root;
+        ArrayList<BSTNode> a = new ArrayList<BSTNode>();
+        getInorderHelper(root, a);
+        return a;
+    }
+
+    public void getInorderHelper(BSTNode root, ArrayList<BSTNode> a)
+    {
+        /*if (root == null)
+        {
+            return;
+        }*/
+
     }
 
     /**
@@ -93,7 +105,22 @@ public class BST {
      */
     public ArrayList<BSTNode> getPreorder() {
         // TODO: Complete preorder traversal
-        return null;
+        BSTNode root = this.root;
+        ArrayList<BSTNode> a = new ArrayList<BSTNode>();
+        getPreorderHelper(root, a);
+        return a;
+    }
+
+    public void getPreorderHelper(BSTNode root, ArrayList<BSTNode> a)
+    {
+        if (root == null)
+        {
+            return;
+        }
+        a.add(root);
+        getPreorderHelper(root.getLeft(), a);
+        getPreorderHelper(root.getRight(), a);
+        return;
     }
 
     /**
