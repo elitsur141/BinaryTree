@@ -156,9 +156,40 @@ public class BST {
      * @param val The value ot insert
      */
     public void insert(int val) {
+        BSTNode current = this.root;
+        insertHelper(val, current);
         // TODO: Complete insert
     }
 
+    public void insertHelper(int val, BSTNode current)
+    {
+        int curr = current.getVal();
+        if (curr == val)
+        {
+            return;
+        }
+        if (current.getLeft() == null && current.getRight() == null)
+        {
+            BSTNode n = new BSTNode(val);
+            if (curr > val)
+            {
+                current.setLeft(n);
+            }
+            else
+            {
+                current.setRight(n);
+            }
+            return;
+        }
+        if (curr > val)
+        {
+            insertHelper(val, current.getLeft());
+        }
+        if (curr < val)
+        {
+            insertHelper(val, current.getRight());
+        }
+    }
     /**
      * Determines if the current BST is
      * a valid BST.
