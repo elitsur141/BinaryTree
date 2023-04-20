@@ -1,3 +1,4 @@
+// Ella Litsur
 import java.util.ArrayList;
 
 /**
@@ -46,6 +47,7 @@ public class BST {
      * @param val integer value to search for
      * @return true if val is in the tree, false otherwise
      */
+    // Searches for a specific value in the tree
     public boolean search(int val) {
         // TODO: Complete the search function
         BSTNode root = this.root;
@@ -54,7 +56,6 @@ public class BST {
 
     public boolean searchHelper(int val, BSTNode root)
     {
-        // base cases
         if (root == null)
         {
             return false;
@@ -73,7 +74,7 @@ public class BST {
         {
             return searchHelper(val, root.getRight());
         }
-        // else search in left subtree
+        // Search in left subtree
         else
         {
             return searchHelper(val, root.getLeft());
@@ -83,6 +84,7 @@ public class BST {
     /**
      * @return ArrayList of BSTNodes in inorder
      */
+    // Returns an ArrayList of the tree values inorder
     public ArrayList<BSTNode> getInorder() {
         // TODO: Complete inorder traversal
         BSTNode root = this.root;
@@ -106,6 +108,7 @@ public class BST {
     /**
      * @return ArrayList of BSTNodes in preorder
      */
+    // Returns an ArrayList of the tree values in preorder
     public ArrayList<BSTNode> getPreorder() {
         // TODO: Complete preorder traversal
         BSTNode root = this.root;
@@ -129,6 +132,7 @@ public class BST {
     /**
      * @return ArrayList of BSTNodes in postorder
      */
+    // Returns an ArrayList of the tree values in postorder
     public ArrayList<BSTNode> getPostorder() {
         // TODO: Complete postorder traversal
         BSTNode root = this.root;
@@ -155,6 +159,7 @@ public class BST {
      * root instance variable to be the root of the new modified tree.
      * @param val The value ot insert
      */
+    // Inserts a node with a specific value into its correct place in the tree
     public void insert(int val) {
         BSTNode current = this.root;
         insertHelper(val, current);
