@@ -173,8 +173,10 @@ public class BST {
         {
             return;
         }
+        // Once the search has reached the root of the soon-to-be node
         if (current.getLeft() == null && current.getRight() == null)
         {
+            // Create and insert the node appropriately
             BSTNode n = new BSTNode(val);
             if (curr > val)
             {
